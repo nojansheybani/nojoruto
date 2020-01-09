@@ -14,6 +14,12 @@ import ReactGA from 'react-ga';
 const trackingId = "UA-155940168-1";
 ReactGA.initialize(trackingId);
 ReactGA.pageview('/');
+ReactGA.pageview('/nojan');
+ReactGA.pageview('/joe');
+ReactGA.pageview('/russell');
+ReactGA.pageview('/tommy');
+ReactGA.pageview('/support');
+ReactGA.pageview('/merch');
 
 const home = () => (
   <div>
