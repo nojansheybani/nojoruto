@@ -9,6 +9,11 @@ import all from './all.jpeg'
 import merch from './merch.jpg'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import {Button, Modal} from 'react-bootstrap';
+import ReactGA from 'react-ga';
+
+const trackingId = "UA-155940168-1";
+ReactGA.initialize(trackingId);
+ReactGA.pageview('/');
 
 const home = () => (
   <div>
