@@ -1,34 +1,14 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import logo from './daniel.png';
 import './App.css';
 import nojanpic from './nojan.jpeg'
 import joepic from './joe.jpeg'
-import russellpic from './russell.jpeg'
+import russellpic from './russell.jpg'
 import tommypic from './tommy.jpeg'
 import all from './all.jpeg'
 import merch from './merch.jpg'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import {Button, Modal} from 'react-bootstrap';
-
-function Example() {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  return (
-    <>
-      <Button variant="primary" onClick={handleShow}>
-        Buy now
-      </Button>
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton />
-        <Modal.Body>GET PWND NOOB</Modal.Body>
-      </Modal>
-    </>
-  );
-}
 
 const home = () => (
   <div>
@@ -53,7 +33,7 @@ const joe = () => (
 
 const russell = () => (
   <div>
-    <h3>The Stud</h3>
+    <h3>The Dreamer</h3>
     <img className="pics" src={russellpic}/>
   </div>
 )
@@ -62,6 +42,12 @@ const tommy = () => (
   <div>
     <h3>The Muscles</h3>
     <img className="pics" src={tommypic}/>
+  </div>
+)
+
+const merchpage = () => (
+  <div>
+    <h1> Out of stock due to unanticipated demand </h1>
   </div>
 )
 
@@ -75,7 +61,9 @@ const support = () => (
     <h3> Buy our merch </h3>
     <img className="pics" src={merch}/>
     <p/>
-    <Example />
+    <Link to="/merch">
+      <button>Buy Now</button>
+    </Link>
     <h3 className="secret"> Noob </h3>
     <h3> Give us money</h3>
     <p> Venmo: Nojan-Sheybani </p>
@@ -124,6 +112,7 @@ class App extends Component {
             <Route exact path="/russell" component={russell} />
             <Route exact path="/tommy" component={tommy} />
             <Route exact path="/support" component={support} />
+            <Route exact path="/merch" component={merchpage} />
           </div>
         </div>
       </Router>
